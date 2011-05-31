@@ -79,6 +79,7 @@ class Chef
         :long => "--ssh-user USERNAME",
         :description => "The ssh username",
         :default => "root"
+        :proc => Proc.new { |key| Chef::Config[:knife][:ssh_user] = key }
 
       option :ssh_password,
         :short => "-P PASSWORD",
